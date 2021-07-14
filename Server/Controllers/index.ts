@@ -12,9 +12,9 @@ export function DisplayAboutPage(req: Request, res: Response, next: NextFunction
     res.render('index', { title: 'About Us', page: 'about'  });
 }
 
-export function DisplayProjectsPage(req: Request, res: Response, next: NextFunction): void
+export function DisplayActiveTourneyPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Our Projects', page: 'projects'  });
+    res.render("index", { title: "Active Tournaments", page: "activetourney" });
 }
 
 export function DisplayServicesPage(req: Request, res: Response, next: NextFunction): void
