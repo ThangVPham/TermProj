@@ -8,6 +8,8 @@ import mongoose, { mongo } from 'mongoose';
 // import the index router and inject a reference here
 import indexRouter from '../Routes/index';
 import competitorRouter from '../Routes/competitor';
+import matchRouter from '../Routes/match';
+import tournamentRouter from '../Routes/tournament';
 // Express Web App Configuration
 const app = express();
 export default app; // exports app as the default Object for this module
@@ -42,6 +44,8 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 // perform routing
 app.use('/', indexRouter);
 app.use('/competitor-list', competitorRouter); // create a separate "area" of our web application
+app.use('/match-list', matchRouter); 
+app.use('/tournament-list', tournamentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

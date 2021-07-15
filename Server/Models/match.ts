@@ -3,7 +3,7 @@ const Schema = mongoose.Schema; // alias for the mongoose schema
 
 const MatchItemSchema = new Schema
 ({
-    matchNumber: Number,
+    matchNumber: String,
     competitor1Name: String,
     competitor2Name: String,
     winner: String

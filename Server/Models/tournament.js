@@ -5,14 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
-const MatchItemSchema = new Schema({
-    matchNumber: String,
-    competitor1Name: String,
-    competitor2Name: String,
-    winner: String
+const TournamentItemSchema = new Schema({
+    tournamentName: String,
+    numberOfCompetitors: Number,
+    type: String,
+    description: String,
+    competitorList: String,
+    champion: String
 }, {
-    collection: "match"
+    collection: "tournament"
 });
-const Model = mongoose_1.default.model("Match", MatchItemSchema);
+const Model = mongoose_1.default.model("Tournament", TournamentItemSchema);
 exports.default = Model;
-//# sourceMappingURL=match.js.map
+//# sourceMappingURL=tournament.js.map
