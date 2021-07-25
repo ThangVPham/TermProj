@@ -59,6 +59,7 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     ({
        "_id": id,
       "fullname": req.body.fullname,
+      "tournamentID": req.body.tournamentID,
       "description": req.body.description
     });
   
@@ -81,6 +82,7 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   let newCompetitor = new Competitor
   ({
       "fullname": req.body.fullname,
+      "tournamentID": req.body.tournamentID,
       "description": req.body.description
   });
 

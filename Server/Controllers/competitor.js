@@ -36,6 +36,7 @@ function ProcessEditPage(req, res, next) {
     let updatedCompetitorItem = new competitor_1.default({
         "_id": id,
         "fullname": req.body.fullname,
+        "tournamentID": req.body.tournamentID,
         "description": req.body.description
     });
     competitor_1.default.updateOne({ _id: id }, updatedCompetitorItem, {}, (err) => {
@@ -50,6 +51,7 @@ exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newCompetitor = new competitor_1.default({
         "fullname": req.body.fullname,
+        "tournamentID": req.body.tournamentID,
         "description": req.body.description
     });
     competitor_1.default.create(newCompetitor, (err) => {

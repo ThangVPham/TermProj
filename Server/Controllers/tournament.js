@@ -36,6 +36,7 @@ function ProcessEditPage(req, res, next) {
     let updatedTournamentItem = new tournament_1.default({
         "_id": id,
         "tournamentName": req.body.tournamentName,
+        "tournamentID": req.body.tournamentID,
         "numberOfCompetitors": req.body.numberOfCompetitors,
         "type": req.body.type,
         "description": req.body.description,
@@ -54,6 +55,7 @@ exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newTournament = new tournament_1.default({
         "tournamentName": req.body.tournamentName,
+        "tournamentID": req.body.tournamentID,
         "numberOfCompetitors": req.body.numberOfCompetitors,
         "type": req.body.type,
         "description": req.body.description,
@@ -65,7 +67,7 @@ function ProcessAddPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/tournament-list');
+        res.redirect('/competitor-list');
     });
 }
 exports.ProcessAddPage = ProcessAddPage;

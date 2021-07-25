@@ -3,16 +3,25 @@
       Group Number: 1
       Date: July 13, 2021
 -->
+
 <div class ="container">
 <div class="row justify-content-lg-center g-3">
-    <h1><%= title %> Tournament</h1>
-
+    <% if(title == "Add") { %>
+        <h1> Create New Tournament Tournament</h1>
+    <% } else { %>
+        <h1> Edit Tournament</h1>
+    <%}%>
     <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Tournament's Name</label><br>
             <input type="text" class="form-control" id="tournamentName" placeholder="Name" value="<%= tournament.tournamentName %>" name="tournamentName" required><br>
         </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tournament ID</label><br>
+            <input type="text" class="form-control" id="tournamentID" placeholder="ID Number" value="<%= tournament.tournamentID %>" name="tournamentID" required><br>
+        </div>
+
 
         <div class="input-group mb-3">
             <div class="form-group">
@@ -29,7 +38,7 @@
         </div>
         <div class="form-group">
             <label for="cars">Select Tournament Type: </label>
-            <select name="type" id="type">
+            <select name="type" id="type" required>
                 <option value="">Options</option>
                 <option value="E-sport" >E-Sport</option>
                 <option value="Sport">Sport</option>            
@@ -42,7 +51,7 @@
             <textarea class="form-control" type="text" id="description" name="description" rows="6"placeholder="Tournament's Description" value="<%= tournament.description %>" required></textarea><br>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description</label><br>
+            <label for="exampleFormControlTextarea1">Champion</label><br>
             <input id="champion" type="text" class="form-control" placeholder="Champion" aria-label="Champion" aria-describedby="Champion"
             name="champion" value="<%= tournament.champion %>"><br><br>
         </div>
@@ -57,3 +66,5 @@
     </form>
 </div>
 </div>
+
+

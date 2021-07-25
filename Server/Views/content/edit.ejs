@@ -3,7 +3,6 @@
       Group Number: 1
       Date: July 13, 2021
 -->
-
 <div class="container" >
     <h1>Add competitors</h1>
     <form method="POST">      
@@ -12,6 +11,11 @@
                 <label for="exampleFormControlInput1">Full Name</label>
                 <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="Competitor Full Name"
                 name="fullname" value="<%= competitor.fullname %>" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Tournament ID</label>
+                <input id="ID" type="text" class="form-control" placeholder="ID Number" aria-label="ID Number" aria-describedby="Competitor Full Name"
+                name="tournamentID" value="<%= competitor.tournamentID %>" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Biography</label>

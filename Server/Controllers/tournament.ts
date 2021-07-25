@@ -56,6 +56,7 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     ({
        "_id": id,
       "tournamentName": req.body.tournamentName,
+      "tournamentID": req.body.tournamentID,
       "numberOfCompetitors": req.body.numberOfCompetitors,
       "type": req.body.type,
       "description": req.body.description,
@@ -82,6 +83,7 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   let newTournament = new Tournament
   ({
       "tournamentName": req.body.tournamentName,
+      "tournamentID": req.body.tournamentID,
       "numberOfCompetitors": req.body.numberOfCompetitors,
       "type": req.body.type,
       "description": req.body.description,
@@ -97,7 +99,7 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
       res.end(err);
     }
 
-    res.redirect('/tournament-list');
+    res.redirect('/competitor-list');
   });
 }
 
